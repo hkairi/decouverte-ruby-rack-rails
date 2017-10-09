@@ -1,0 +1,23 @@
+<div>
+  <a href='/'>Accueil</a>
+  <a href='/contact'>Contact</a>
+  <br />
+  ici c'est la page contact
+  <br />
+  mes contacts [<%= @contacts.size %>]
+  <br />
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>NOM</th>
+      </thead>
+      <tbody>
+        <% @contacts.each do |contact| %>
+          <tr>
+            <td> <%= contact[:id] %> </td>
+            <td> <%= contact[:nom] %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+</table>
+</div>
