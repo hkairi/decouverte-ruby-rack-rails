@@ -1,0 +1,5 @@
+1 - créer une base de données postgres appelée decouverte
+
+bundle install
+
+bundle exec shotgun --port=3000 config.ru
