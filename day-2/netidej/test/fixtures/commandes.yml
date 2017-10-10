@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-10-10
+  utilisateur: one
+  plat: one
+
+two:
+  date: 2017-10-10
+  utilisateur: two
+  plat: two

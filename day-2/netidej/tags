@@ -1,0 +1,78 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AccueilController	app/controllers/accueil_controller.rb	/^class AccueilController < ApplicationController$/;"	c
+AccueilControllerTest	test/controllers/accueil_controller_test.rb	/^class AccueilControllerTest < ActionDispatch::IntegrationTest$/;"	c
+AccueilHelper	app/helpers/accueil_helper.rb	/^module AccueilHelper$/;"	m
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddDateToPlat	db/migrate/20171010151341_add_date_to_plat.rb	/^class AddDateToPlat < ActiveRecord::Migration[5.1]$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Netidej
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+ApplicationSystemTestCase	test/application_system_test_case.rb	/^class ApplicationSystemTestCase < ActionDispatch::SystemTestCase$/;"	c
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Commande	app/models/commande.rb	/^class Commande < ApplicationRecord$/;"	c
+CommandeService	app/services/commande_service.rb	/^class CommandeService$/;"	c
+CommandeTest	test/models/commande_test.rb	/^class CommandeTest < ActiveSupport::TestCase$/;"	c
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+CreateCommandes	db/migrate/20171010150747_create_commandes.rb	/^class CreateCommandes < ActiveRecord::Migration[5.1]$/;"	c
+CreatePlats	db/migrate/20171010120959_create_plats.rb	/^class CreatePlats < ActiveRecord::Migration[5.1]$/;"	c
+CreateUtilisateurs	db/migrate/20171010143952_create_utilisateurs.rb	/^class CreateUtilisateurs < ActiveRecord::Migration[5.1]$/;"	c
+Netidej	config/application.rb	/^module Netidej$/;"	m
+Plat	app/models/plat.rb	/^class Plat < ApplicationRecord$/;"	c
+PlatTest	test/models/plat_test.rb	/^class PlatTest < ActiveSupport::TestCase$/;"	c
+PlatsController	app/controllers/plats_controller.rb	/^class PlatsController < ApplicationController$/;"	c
+PlatsControllerTest	test/controllers/plats_controller_test.rb	/^class PlatsControllerTest < ActionDispatch::IntegrationTest$/;"	c
+PlatsHelper	app/helpers/plats_helper.rb	/^module PlatsHelper$/;"	m
+PlatsTest	test/system/plats_test.rb	/^class PlatsTest < ApplicationSystemTestCase$/;"	c
+Utilisateur	app/models/utilisateur.rb	/^class Utilisateur < ApplicationRecord$/;"	c
+UtilisateurTest	test/models/utilisateur_test.rb	/^class UtilisateurTest < ActiveSupport::TestCase$/;"	c
+UtilisateursController	app/controllers/utilisateurs_controller.rb	/^class UtilisateursController < ApplicationController$/;"	c
+UtilisateursControllerTest	test/controllers/utilisateurs_controller_test.rb	/^class UtilisateursControllerTest < ActionDispatch::IntegrationTest$/;"	c
+UtilisateursHelper	app/helpers/utilisateurs_helper.rb	/^module UtilisateursHelper$/;"	m
+UtilisateursTest	test/system/utilisateurs_test.rb	/^class UtilisateursTest < ApplicationSystemTestCase$/;"	c
+a_deja_commande?	app/services/commande_service.rb	/^  def a_deja_commande?(user_id, date = Date.today)$/;"	f	class:CommandeService
+authenticate	app/models/utilisateur.rb	/^  def self.authenticate(email, password)$/;"	F	class:Utilisateur
+change	db/migrate/20171010120959_create_plats.rb	/^  def change$/;"	f	class:CreatePlats
+change	db/migrate/20171010143952_create_utilisateurs.rb	/^  def change$/;"	f	class:CreateUtilisateurs
+change	db/migrate/20171010150747_create_commandes.rb	/^  def change$/;"	f	class:CreateCommandes
+change	db/migrate/20171010151341_add_date_to_plat.rb	/^  def change$/;"	f	class:AddDateToPlat
+commandeService	app/controllers/accueil_controller.rb	/^  def commandeService$/;"	f	class:AccueilController
+commander	app/controllers/accueil_controller.rb	/^  def commander$/;"	f	class:AccueilController
+connected?	app/controllers/application_controller.rb	/^  def connected?$/;"	f	class:ApplicationController
+create	app/controllers/plats_controller.rb	/^  def create$/;"	f	class:PlatsController
+create	app/controllers/utilisateurs_controller.rb	/^  def create$/;"	f	class:UtilisateursController
+creer	app/services/commande_service.rb	/^  def creer(plat_id, user_id)$/;"	f	class:CommandeService
+destroy	app/controllers/plats_controller.rb	/^  def destroy$/;"	f	class:PlatsController
+destroy	app/controllers/utilisateurs_controller.rb	/^  def destroy$/;"	f	class:UtilisateursController
+du_jour	app/services/commande_service.rb	/^  def du_jour(date = Date.today)$/;"	f	class:CommandeService
+edit	app/controllers/plats_controller.rb	/^  def edit$/;"	f	class:PlatsController
+edit	app/controllers/utilisateurs_controller.rb	/^  def edit$/;"	f	class:UtilisateursController
+index	app/controllers/accueil_controller.rb	/^  def index$/;"	f	class:AccueilController
+index	app/controllers/plats_controller.rb	/^  def index$/;"	f	class:PlatsController
+index	app/controllers/utilisateurs_controller.rb	/^  def index$/;"	f	class:UtilisateursController
+login	app/controllers/accueil_controller.rb	/^  def login$/;"	f	class:AccueilController
+logout	app/controllers/accueil_controller.rb	/^  def logout$/;"	f	class:AccueilController
+modifier	app/services/commande_service.rb	/^  def modifier(commande_id, plat_id)$/;"	f	class:CommandeService
+new	app/controllers/plats_controller.rb	/^  def new$/;"	f	class:PlatsController
+new	app/controllers/utilisateurs_controller.rb	/^  def new$/;"	f	class:UtilisateursController
+plat_params	app/controllers/plats_controller.rb	/^    def plat_params$/;"	f	class:PlatsController
+set_plat	app/controllers/plats_controller.rb	/^    def set_plat$/;"	f	class:PlatsController
+set_utilisateur	app/controllers/utilisateurs_controller.rb	/^    def set_utilisateur$/;"	f	class:UtilisateursController
+show	app/controllers/plats_controller.rb	/^  def show$/;"	f	class:PlatsController
+show	app/controllers/utilisateurs_controller.rb	/^  def show$/;"	f	class:UtilisateursController
+system!	bin/setup	/^def system!(*args)$/;"	f
+system!	bin/update	/^def system!(*args)$/;"	f
+this_user_is_me?	app/controllers/application_controller.rb	/^  def this_user_is_me?(user_id)$/;"	f	class:ApplicationController
+update	app/controllers/plats_controller.rb	/^  def update$/;"	f	class:PlatsController
+update	app/controllers/utilisateurs_controller.rb	/^  def update$/;"	f	class:UtilisateursController
+utilisateur_params	app/controllers/utilisateurs_controller.rb	/^    def utilisateur_params$/;"	f	class:UtilisateursController
+verifie_que_le_gars_est_connecte	app/controllers/application_controller.rb	/^  def verifie_que_le_gars_est_connecte$/;"	f	class:ApplicationController

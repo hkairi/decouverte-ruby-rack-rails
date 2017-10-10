@@ -1,0 +1,9 @@
+<div class="info">
+  <h3>Les plats du jour</h3>
+  <%= form_tag commande_path do %>
+    <% @plats.each do |plat| %>
+      <p><%= radio_button :plat, :plat_id, plat.id %><%= plat.nom %></p>
+    <% end %>
+    <%= submit_tag 'Commander ce plat', disable_with: 'Commande en cours...'%>
+  <% end %>
+</div>

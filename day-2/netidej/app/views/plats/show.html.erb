@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      <strong>Nom:</strong>
+      <%= @plat.nom %>
+    </p>
+    <br />
+    <p>
+      <strong>Date:</strong>
+      <%= @plat.date %>
+    </p>
+
+    <%= link_to 'Edit', edit_plat_path(@plat) %> |
+    <%= link_to 'Back', plats_path %>
+  </div>
+</div>

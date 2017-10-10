@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Netidej</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="menu">
+          <%= link_to 'Accueil', root_path %>
+          <% if connected? %>
+            <%= link_to 'Plats', plats_path %>
+            <%= link_to 'Utilisateurs', utilisateurs_path %>
+          <% end %>
+          <% if connected? %>
+            <%= link_to 'Déconnexion', logout_path %>
+          <% else %>
+            <%= link_to 'Connexion', login_path %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row content">
+        <%= yield %>
+      </div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>

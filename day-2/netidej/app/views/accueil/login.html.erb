@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= @erreur if @erreur %>
+    <%= form_tag do %>
+      <%= text_field     :utilisateur, :email, placeholder: 'email'%>
+      <%= password_field :utilisateur, :password, placeholder: 'mot de passe'%>
+      <%= submit_tag 'connexion', disable_with: 'connexion en cours...' %>
+    <% end %>
+  </div>
+</div>

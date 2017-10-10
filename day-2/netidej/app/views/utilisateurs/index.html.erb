@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Nom</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @utilisateurs.each do |utilisateur| %>
+          <tr>
+            <td><%= utilisateur.email %></td>
+            <td><%= utilisateur.nom %></td>
+            <td><%= link_to 'Détails', utilisateur %></td>
+            <td>
+              <% if this_user_is_me?(utilisateur.id) %>
+                <%= link_to 'Modifier', edit_utilisateur_path(utilisateur) %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Utilisateur', new_utilisateur_path %>
+  </div>
+</div>
