@@ -3,14 +3,18 @@ class ApplicationController < ActionController::Base
 
   before_action :verifie_que_le_gars_est_connecte, except: [:login]
 
-  helper_method 'connected?', 'this_user_is_me?'
+  helper_method 'connected?', 'this_user_is_me?', 'current_user'
 
   def connected?
-    !session[:user_id].nil?
+    !session[:user].nil?
+  end
+
+  def current_user
+    session[:user]
   end
 
   def this_user_is_me?(user_id)
-    session[:user_id] == user_id
+    session[:user]['id'] == user_id
   end
 
   def verifie_que_le_gars_est_connecte

@@ -1,6 +1,8 @@
 class UtilisateursController < ApplicationController
   before_action :set_utilisateur, only: [:show, :edit, :update, :destroy]
 
+  before_action :verifie_que_le_gars_est_connecte, except: [:new, :create]
+
   # GET /utilisateurs
   # GET /utilisateurs.json
   def index

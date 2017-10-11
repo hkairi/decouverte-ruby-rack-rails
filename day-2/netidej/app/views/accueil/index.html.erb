@@ -1,9 +1,31 @@
-<div class="info">
-  <h3>Les plats du jour</h3>
-  <%= form_tag commande_path do %>
-    <% @plats.each do |plat| %>
-      <p><%= radio_button :plat, :plat_id, plat.id %><%= plat.nom %></p>
+<div class="row">
+  <div class="col-md-7">
+    <% if peut_commander?(current_user, @plats) %>
+      <h3>Les plats du jour</h3>
+      <%= form_tag commande_path do %>
+        <% @plats.each do |plat| %>
+          <p><%= radio_button :plat, :plat_id, plat.id %><%= plat.nom %></p>
+        <% end %>
+        <%= submit_tag 'Commander ce plat', disable_with: 'Commande en cours...'%>
+      <% end %>
+    <% else %>
+      <%= pourquoi_je_ne_peux_pas_commander?(current_user, @plats)%>
     <% end %>
-    <%= submit_tag 'Commander ce plat', disable_with: 'Commande en cours...'%>
-  <% end %>
+  </div>
+
+  <div class="col-md-5">
+    <p> Les commandes de la journée [<%= @commandes_count %>] </p>
+    <table>
+      <% @commandes.each do |plat, personnes| %>
+        <tr>
+          <td>
+            <strong> <%= plat %> => <%= personnes.size %> </strong>
+            <%personnes.each do |personne| %>
+              <p><%= personne %></p>
+            <%end%>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

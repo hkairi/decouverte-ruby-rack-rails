@@ -1,12 +1,14 @@
 class AccueilController < ApplicationController
 
   def index
-    @plats = Plat.du_jour
+    @plats           = Plat.du_jour
+    @commandes       = commandeService.commandes_du_jour(Date.today).details
+    @commandes_count = commandeService.count(@commandes)
   end
 
   def commander
     if params[:plat]
-      commandeService.creer(params[:plat][:plat_id], session[:user_id])
+      commandeService.creer(params[:plat][:plat_id], current_user['id'])
     end
 
     redirect_to root_path
@@ -18,8 +20,7 @@ class AccueilController < ApplicationController
       user = Utilisateur.authenticate(email, password)
 
       if user
-        session[:user_id]   = user.id
-        session[:user_name] = user.email
+        session[:user] = user
         redirect_to root_path
       else
         @erreur = "Email ou mot de passe incorrect"
@@ -29,8 +30,7 @@ class AccueilController < ApplicationController
   end
 
   def logout
-    session[:user_id]   = nil
-    session[:user_name] = nil
+    session[:user]   = nil
     redirect_to login_path
   end
 
