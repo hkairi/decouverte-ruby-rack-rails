@@ -9,6 +9,7 @@ class CommandeService
 
   def a_deja_commande?(user_id, date = Date.today)
     res = Commande.includes(:plat)
+                  .where(annulee: false)
                   .where(utilisateur_id: user_id, date: date)
                   .first
 
@@ -17,6 +18,7 @@ class CommandeService
 
   def commandes_du_jour(date = Date.today)
     liste = Commande.includes(:plat, :utilisateur)
+                    .where(annulee: false)
                     .where(date: date)
                     .all
 
@@ -34,7 +36,8 @@ class CommandeService
     commandes.map { |k, v| v.size }.flatten.reduce(:+)
   end
 
-  def modifier(commande_id, plat_id)
+  def annuler(user_id)
+    Commande.annuler(user_id)
   end
 
 end

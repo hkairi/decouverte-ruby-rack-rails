@@ -1,13 +1,20 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="container">
+    <%= link_to 'Retour à la liste', utilisateurs_path, class: 'btn btn-default' %>
+  </div>
+  <div class="col-md-4">
+    <h6>Les informations de base </h6>
     <strong>Email:</strong>
     <%= @utilisateur.email %>
     <br />
     <strong>Nom:</strong>
     <%= @utilisateur.nom %>
     <br />
-    <div class="options">
-      <%= link_to 'Retour à la liste', utilisateurs_path %>
-    </div>
+  </div>
+  <div class="col-md-8">
+    <h6>Les commandes de <%= @utilisateur.nom %></h6>
+    <% @utilisateur.commandes.each do |commande| %>
+      <%= commande.created_at.strftime('%d-%m-%Y à %Hh:%M') %> - <%= commande.plat.nom %>
+    <% end %>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010151341) do
+ActiveRecord::Schema.define(version: 20171011150616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171010151341) do
     t.bigint "plat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "annulee", default: false
     t.index ["plat_id"], name: "index_commandes_on_plat_id"
     t.index ["utilisateur_id"], name: "index_commandes_on_utilisateur_id"
   end

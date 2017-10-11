@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   # commande
   post '/commander', to: 'accueil#commander', as: 'commande'
+  get  '/commande/:user_id/annuler', to: 'accueil#annuler_commande', as: 'annuler_commande'
+  get  '/commande/:user_id/modifier', to: 'accueil#modifier_commande', as: 'modifier_commande'
   root to: 'accueil#index'
 end

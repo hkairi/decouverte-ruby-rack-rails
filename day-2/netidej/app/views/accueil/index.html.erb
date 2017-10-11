@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-md-7">
+    <h4> <b style='color: red'>ATTENTION</b> passez vos commandes avant 9:30</h4>
     <% if peut_commander?(current_user, @plats) %>
       <h3>Les plats du jour</h3>
       <%= form_tag commande_path do %>
@@ -9,23 +10,53 @@
         <%= submit_tag 'Commander ce plat', disable_with: 'Commande en cours...'%>
       <% end %>
     <% else %>
-      <%= pourquoi_je_ne_peux_pas_commander?(current_user, @plats)%>
+      <div class='information'>
+        <%= pourquoi_je_ne_peux_pas_commander?(current_user, @plats)%>
+
+        <% if a_deja_commande_a_l_heure?(current_user) %>
+          <%= link_to 'Annuler ma commande',
+            annuler_commande_path(current_user['id']), class: 'btn btn-danger'%>
+          <%= link_to 'Modifer ma commande',
+            modifier_commande_path(current_user['id']), class: 'btn btn-warning'%>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
   <div class="col-md-5">
-    <p> Les commandes de la journée [<%= @commandes_count %>] </p>
-    <table>
-      <% @commandes.each do |plat, personnes| %>
-        <tr>
-          <td>
-            <strong> <%= plat %> => <%= personnes.size %> </strong>
-            <%personnes.each do |personne| %>
-              <p><%= personne %></p>
-            <%end%>
-          </td>
-        </tr>
-      <% end %>
-    </table>
+    <div class="container">
+      <h4>
+        Les commandes de la journée [<%= @commandes_count %>]
+      </h4>
+      <hr>
+      <div class="row">
+        <div class="col-lg-12" style="">
+          <div class="panel panel-default list-group-panel">
+            <div class="panel-body">
+              <ul class="list-group list-group-header">
+                <li class="list-group-item list-group-body">
+                  <div class="row">
+                    <div class="col-lg-8 text-left">Plat</div>
+                    <div class="col-lg-4" style="text-align: center">Commandes</div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="list-group list-group-body" style="">
+                <% @commandes.each do |plat, personnes| %>
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-lg-8 text-left" style=""><b><%= plat%></b></div>
+                      <div class="col-lg-4" style="text-align: center">
+                        <%= personnes.size %>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

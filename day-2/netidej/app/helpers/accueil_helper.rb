@@ -1,9 +1,11 @@
 module AccueilHelper
 
   def peut_commander?(user, plats)
-    time = Time.now
-    heure_passee = ((time.hour > 9 ||( time.hour >= 9 && time.min > 30)))
-    not (plats.empty? || commandeService.a_deja_commande?(user['id']).value || heure_passee)
+    not(plats.empty? || commandeService.a_deja_commande?(user['id']).value || heure_passee?)
+  end
+
+  def a_deja_commande_a_l_heure?(user)
+    commandeService.a_deja_commande?(user['id']).value && !heure_passee?
   end
 
   def pourquoi_je_ne_peux_pas_commander?(user, plats)
@@ -14,6 +16,10 @@ module AccueilHelper
     msg << "Vous avez déjà commandé le plat '#{res.details}'." if res.value
   end
 
+  def heure_passee?
+    time = Time.now
+    ((time.hour > 9 ||( time.hour >= 9 && time.min > 30)))
+  end
   def commandeService
     service ||= CommandeService.new
   end

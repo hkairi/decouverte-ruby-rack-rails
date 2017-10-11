@@ -1,4 +1,5 @@
 div.menu{
+  margin-top: 10px;
   width: 100%;
   height: 40px;
   float: left;
@@ -6,6 +7,7 @@ div.menu{
   border-bottom: 1px solid #333;
   a{
     margin-right: 10px;
+    color: #333;
     &:hover{
       background: #FFF;
       color: #000;
@@ -16,4 +18,11 @@ div.menu{
 div.content{
   min-height:400px;
   padding: 10px 0;
+
+  div.information{
+    margin: 100px auto;
+    font-size: 18px;
+    text-align: center;
+    .btn{ margin-top: 13px; }
+  }
 }

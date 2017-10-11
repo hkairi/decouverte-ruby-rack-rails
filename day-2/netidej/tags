@@ -8,6 +8,7 @@ AccueilController	app/controllers/accueil_controller.rb	/^class AccueilControlle
 AccueilControllerTest	test/controllers/accueil_controller_test.rb	/^class AccueilControllerTest < ActionDispatch::IntegrationTest$/;"	c
 AccueilHelper	app/helpers/accueil_helper.rb	/^module AccueilHelper$/;"	m
 ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddAnnuleeToCommande	db/migrate/20171011150616_add_annulee_to_commande.rb	/^class AddAnnuleeToCommande < ActiveRecord::Migration[5.1]$/;"	c
 AddDateToPlat	db/migrate/20171010151341_add_date_to_plat.rb	/^class AddDateToPlat < ActiveRecord::Migration[5.1]$/;"	c
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Netidej
 ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
@@ -40,31 +41,42 @@ UtilisateursControllerTest	test/controllers/utilisateurs_controller_test.rb	/^cl
 UtilisateursHelper	app/helpers/utilisateurs_helper.rb	/^module UtilisateursHelper$/;"	m
 UtilisateursTest	test/system/utilisateurs_test.rb	/^class UtilisateursTest < ApplicationSystemTestCase$/;"	c
 a_deja_commande?	app/services/commande_service.rb	/^  def a_deja_commande?(user_id, date = Date.today)$/;"	f	class:CommandeService
+a_deja_commande_a_l_heure?	app/helpers/accueil_helper.rb	/^  def a_deja_commande_a_l_heure?(user)$/;"	f	class:AccueilHelper
+annuler	app/models/commande.rb	/^  def self.annuler(user_id)$/;"	F	class:Commande
+annuler	app/services/commande_service.rb	/^  def annuler(user_id)$/;"	f	class:CommandeService
+annuler_commande	app/controllers/accueil_controller.rb	/^  def annuler_commande$/;"	f	class:AccueilController
 authenticate	app/models/utilisateur.rb	/^  def self.authenticate(email, password)$/;"	F	class:Utilisateur
 change	db/migrate/20171010120959_create_plats.rb	/^  def change$/;"	f	class:CreatePlats
 change	db/migrate/20171010143952_create_utilisateurs.rb	/^  def change$/;"	f	class:CreateUtilisateurs
 change	db/migrate/20171010150747_create_commandes.rb	/^  def change$/;"	f	class:CreateCommandes
 change	db/migrate/20171010151341_add_date_to_plat.rb	/^  def change$/;"	f	class:AddDateToPlat
+change	db/migrate/20171011150616_add_annulee_to_commande.rb	/^  def change$/;"	f	class:AddAnnuleeToCommande
 commandeService	app/controllers/accueil_controller.rb	/^  def commandeService$/;"	f	class:AccueilController
+commandeService	app/helpers/accueil_helper.rb	/^  def commandeService$/;"	f	class:AccueilHelper
 commander	app/controllers/accueil_controller.rb	/^  def commander$/;"	f	class:AccueilController
+commandes_du_jour	app/services/commande_service.rb	/^  def commandes_du_jour(date = Date.today)$/;"	f	class:CommandeService
 connected?	app/controllers/application_controller.rb	/^  def connected?$/;"	f	class:ApplicationController
+count	app/services/commande_service.rb	/^  def count(commandes)$/;"	f	class:CommandeService
 create	app/controllers/plats_controller.rb	/^  def create$/;"	f	class:PlatsController
 create	app/controllers/utilisateurs_controller.rb	/^  def create$/;"	f	class:UtilisateursController
 creer	app/services/commande_service.rb	/^  def creer(plat_id, user_id)$/;"	f	class:CommandeService
+current_user	app/controllers/application_controller.rb	/^  def current_user$/;"	f	class:ApplicationController
 destroy	app/controllers/plats_controller.rb	/^  def destroy$/;"	f	class:PlatsController
 destroy	app/controllers/utilisateurs_controller.rb	/^  def destroy$/;"	f	class:UtilisateursController
-du_jour	app/services/commande_service.rb	/^  def du_jour(date = Date.today)$/;"	f	class:CommandeService
 edit	app/controllers/plats_controller.rb	/^  def edit$/;"	f	class:PlatsController
 edit	app/controllers/utilisateurs_controller.rb	/^  def edit$/;"	f	class:UtilisateursController
+heure_passee?	app/helpers/accueil_helper.rb	/^  def heure_passee?$/;"	f	class:AccueilHelper
 index	app/controllers/accueil_controller.rb	/^  def index$/;"	f	class:AccueilController
 index	app/controllers/plats_controller.rb	/^  def index$/;"	f	class:PlatsController
 index	app/controllers/utilisateurs_controller.rb	/^  def index$/;"	f	class:UtilisateursController
 login	app/controllers/accueil_controller.rb	/^  def login$/;"	f	class:AccueilController
 logout	app/controllers/accueil_controller.rb	/^  def logout$/;"	f	class:AccueilController
-modifier	app/services/commande_service.rb	/^  def modifier(commande_id, plat_id)$/;"	f	class:CommandeService
+modifier_commande	app/controllers/accueil_controller.rb	/^  def modifier_commande$/;"	f	class:AccueilController
 new	app/controllers/plats_controller.rb	/^  def new$/;"	f	class:PlatsController
 new	app/controllers/utilisateurs_controller.rb	/^  def new$/;"	f	class:UtilisateursController
+peut_commander?	app/helpers/accueil_helper.rb	/^  def peut_commander?(user, plats)$/;"	f	class:AccueilHelper
 plat_params	app/controllers/plats_controller.rb	/^    def plat_params$/;"	f	class:PlatsController
+pourquoi_je_ne_peux_pas_commander?	app/helpers/accueil_helper.rb	/^  def pourquoi_je_ne_peux_pas_commander?(user, plats)$/;"	f	class:AccueilHelper
 set_plat	app/controllers/plats_controller.rb	/^    def set_plat$/;"	f	class:PlatsController
 set_utilisateur	app/controllers/utilisateurs_controller.rb	/^    def set_utilisateur$/;"	f	class:UtilisateursController
 show	app/controllers/plats_controller.rb	/^  def show$/;"	f	class:PlatsController

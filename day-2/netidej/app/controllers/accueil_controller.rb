@@ -14,6 +14,14 @@ class AccueilController < ApplicationController
     redirect_to root_path
   end
 
+  def annuler_commande
+    commandeService.annuler(params[:user_id])
+    redirect_to root_path, notice: 'Commande annulée'
+  end
+
+  def modifier_commande
+  end
+
   def login
     if params[:utilisateur]
       email, password = params[:utilisateur][:email], params[:utilisateur][:password]

@@ -1,5 +1,5 @@
 class UtilisateursController < ApplicationController
-  before_action :set_utilisateur, only: [:show, :edit, :update, :destroy]
+  before_action :set_utilisateur, only: [:edit, :update, :destroy]
 
   before_action :verifie_que_le_gars_est_connecte, except: [:new, :create]
 
@@ -12,6 +12,7 @@ class UtilisateursController < ApplicationController
   # GET /utilisateurs/1
   # GET /utilisateurs/1.json
   def show
+    @utilisateur = Utilisateur.includes(commandes: :plat).find(params[:id])
   end
 
   # GET /utilisateurs/new

@@ -1,11 +1,26 @@
-<div class="row">
-  <div class="col-md-12">
-    <%= @erreur if @erreur %>
-    <%= form_tag do %>
-      <%= text_field     :utilisateur, :email, placeholder: 'email'%>
-      <%= password_field :utilisateur, :password, placeholder: 'mot de passe'%>
-      <%= submit_tag 'connexion', disable_with: 'connexion en cours...' %>
-    <% end %>
-  </div>
-  <%= link_to 'Créer un compte', new_utilisateur_path %>
+<div class="container" style="">
+	<div class="row">
+    <div class="col-lg-4"></div>
+
+    <div class="col-lg-4">
+      <h2 class="text-muted">Se connecter</h2>
+      <%= @erreur if @erreur %>
+      <%= form_tag do %>
+        <div class="form-group">
+          <%= text_field :utilisateur, :email, placeholder: 'email', class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= password_field :utilisateur, :password, placeholder: 'mot de passe', class: 'form-control'%>
+          </div>
+        <div class="form-group">
+          <%= submit_tag 'connexion', disable_with: 'connexion en cours...', class: 'btn btn-primary' %>
+          <%= link_to 'Créer un compte', new_utilisateur_path, class: 'btn btn-default pull-right' %>
+        </div>
+        <% end %>
+      </div>
+
+     </div>
+
+    <div class="col-lg-4"></div>
+	</div>
 </div>
