@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  utilisateur: one
+  debut: 2017-10-12
+  fin: 2017-10-12
+  nb_jours: MyString
+  type_conges: MyString
+  motif: MyString
+  acceptee: false
+
+two:
+  utilisateur: two
+  debut: 2017-10-12
+  fin: 2017-10-12
+  nb_jours: MyString
+  type_conges: MyString
+  motif: MyString
+  acceptee: false
