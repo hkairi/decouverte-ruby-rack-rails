@@ -14,10 +14,12 @@
         <%= pourquoi_je_ne_peux_pas_commander?(current_user, @plats)%>
 
         <% if a_deja_commande_a_l_heure?(current_user) %>
-          <%= link_to 'Annuler ma commande',
-            annuler_commande_path(current_user['id']), class: 'btn btn-danger'%>
-          <%= link_to 'Modifer ma commande',
-            modifier_commande_path(current_user['id']), class: 'btn btn-warning'%>
+          <div class="col-md-12">
+            <%= link_to 'Annuler ma commande',
+              annuler_commande_path(current_user['id']), class: 'btn btn-danger'%>
+            <% link_to 'Modifer ma commande',
+              modifier_commande_path(current_user['id']), class: 'btn btn-warning'%>
+            </div>
         <% end %>
       </div>
     <% end %>
@@ -45,7 +47,12 @@
                 <% @commandes.each do |plat, personnes| %>
                   <li class="list-group-item">
                     <div class="row">
-                      <div class="col-lg-8 text-left" style=""><b><%= plat%></b></div>
+                      <div class="col-lg-8 text-left" style="">
+                        <b><%= plat%></b>
+                        <p>
+                          <small>par : <%= personnes.join(', ') %></small>
+                        </p>
+                      </div>
                       <div class="col-lg-4" style="text-align: center">
                         <%= personnes.size %>
                       </div>

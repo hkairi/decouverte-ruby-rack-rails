@@ -3,12 +3,46 @@ class Utilisateur < ApplicationRecord
 
   has_many :commandes
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]{1,50}+@[a-z\d\-.]{2,50}+\.[a-z]{2,6}+\z/i
+
   validates :email,
-    presence:   { message: "Grand .. on en a besoin pour la suite" },
-    uniqueness: { message: "Tu te prends pour l'autre ?" }
+    presence:   { message: ' obligatoire ' },
+    format:     { with: VALID_EMAIL_REGEX, message: ' invalide.'},
+    uniqueness: { message: ' déjà utilisée.' }
+
+  validates :nom,
+    presence: { message: ' obligatoire' },
+    format: { with: /\A[a-zA-Z]/i, message: ' seules les lettres sont acceptées. ' },
+    length:   {
+      minimum: 3,
+      maximum: 30,
+      too_long: ' trop long.',
+      too_short: ' trop court. '
+    }
 
   def self.authenticate(email, password)
     me = where(email: email).first
     me && me.authenticate(password)
+  end
+
+  rails_admin do
+    object_label_method :nom
+    list do
+      field :id
+      field :nom
+      field :email
+      field :commandes
+    end
+
+    show do
+      field :id
+      field :nom
+      field :email
+      field :commandes
+    end
+
+    edit do
+      field :nom
+    end
   end
 end

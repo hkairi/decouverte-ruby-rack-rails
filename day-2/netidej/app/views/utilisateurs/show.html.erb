@@ -13,8 +13,14 @@
   </div>
   <div class="col-md-8">
     <h6>Les commandes de <%= @utilisateur.nom %></h6>
-    <% @utilisateur.commandes.each do |commande| %>
-      <%= commande.created_at.strftime('%d-%m-%Y à %Hh:%M') %> - <%= commande.plat.nom %>
+    <%= cache ['commandes-utilisateur', @utilisateur.commandes] do %>
+      <ul>
+        <% @utilisateur.commandes.each do |commande| %>
+          <li>
+            <%= commande.created_at.strftime('%d-%m-%Y à %Hh:%M') %> - <%= commande.plat.nom %>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
   </div>
 </div>

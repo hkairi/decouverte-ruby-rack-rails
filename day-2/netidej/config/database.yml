@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: netidej_production
-  username: netidej
+  username: postgres
   password: <%= ENV['NETIDEJ_DATABASE_PASSWORD'] %>

@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
+
+  devise_for :admins
+  mount RailsAdmin::Engine => '/administration', as: 'rails_admin'
+
   resources :utilisateurs
-  resources :plats
+  #resources :plats
 
   # connexion et déconnexion
   get '/deconnexion',to: 'accueil#logout', as: 'logout'
   get '/connexion',  to: 'accueil#login', as: 'login'
   post '/connexion', to: 'accueil#login'
+
+  # API
+  get '/api/v1/commandes', to: 'api#commandes'
 
   # commande
   post '/commander', to: 'accueil#commander', as: 'commande'
