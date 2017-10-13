@@ -16,6 +16,8 @@ class AccueilController < ApplicationController
 
   def annuler_commande
     commandeService.annuler(params[:user_id])
+    data = Data.new(current_user['id'], current_user['nom'])
+    broadcast(data, 'annuler-commande', " a annulé sa commande.")
     redirect_to root_path, notice: 'Commande annulée'
   end
 
@@ -29,6 +31,8 @@ class AccueilController < ApplicationController
 
       if user
         session[:user] = user
+        data = user
+        broadcast(data, 'deconnexion', " s'est connecté. ")
         redirect_to root_path
       else
         @erreur = "Email ou mot de passe incorrect"
@@ -38,7 +42,10 @@ class AccueilController < ApplicationController
   end
 
   def logout
+    user = session[:user]
+    data = Data.new(user['id'], user['nom'])
     session[:user]   = nil
+    broadcast(data, 'connexion', " s'est déconnecté.")
     redirect_to login_path
   end
 

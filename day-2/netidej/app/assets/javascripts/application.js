@@ -13,3 +13,18 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//
+
+App.netidej = App.cable.subscriptions.create('NotificationsChannel', {
+  received: function(data){
+    var notification = document.getElementById('notifications');
+    notifications.innerHTML += data;
+  }
+});
+
+function fermer(id, type){
+  var notif = document.getElementById('notif-'+ type + '-' +id);
+  if(notif){
+    notif.remove();
+  }
+}

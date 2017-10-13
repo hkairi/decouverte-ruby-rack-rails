@@ -3,11 +3,13 @@ class Utilisateur < ApplicationRecord
 
   has_many :commandes
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]{1,50}+@[a-z\d\-.]{2,50}+\.[a-z]{2,6}+\z/i
+  #VALID_EMAIL_REGEX = /\A[\w+\-.]{1,50}+@[a-z\d\-.]{2,50}+\.[a-z]{2,6}+\z/i
+  # pour n'accepter que les adresses mail @neticoa.fr
+  VALID_EMAIL_REGEX = /\A[\w+\-.]{1,50}+@neticoa.[fr|sn]/i
 
   validates :email,
     presence:   { message: ' obligatoire ' },
-    format:     { with: VALID_EMAIL_REGEX, message: ' invalide.'},
+    format:     { with: VALID_EMAIL_REGEX, message: ' invalide. Seules les adresses @neticoa.(fr|sn) sont acceptées.'},
     uniqueness: { message: ' déjà utilisée.' }
 
   validates :nom,

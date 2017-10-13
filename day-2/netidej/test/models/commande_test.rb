@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class CommandeTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "une nouvelle commande" do
+    c = Commande.new
+    assert c.id == nil
+  end
 end

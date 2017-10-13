@@ -26,3 +26,16 @@ div.content{
     .btn{ margin-top: 13px; }
   }
 }
+
+span.fermer{
+  float: right;
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+}
+div.notification{
+  padding: 3px;
+  border: 1px dotted #CCC;
+  background: #F8F8F8;
+  margin: 5px 1px;
+}

@@ -4,6 +4,11 @@ class Commande < ApplicationRecord
 
   default_scope { order('id DESC') }
 
+  after_save :notifier
+
+  def notifier
+  end
+
   def self.annuler(user_id)
     where(utilisateur_id: user_id, date: Date.today)
       .update(annulee: true)

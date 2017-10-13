@@ -1,10 +1,10 @@
 development:
-  adapter: async
+  adapter: redis
 
 test:
-  adapter: async
+  adapter: redis
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:f0c9b6534ab0d87d781eecf45c505047@grouper.redistogo.com:9353/
   channel_prefix: netidej_production
